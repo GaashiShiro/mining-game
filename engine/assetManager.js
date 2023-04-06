@@ -1,6 +1,6 @@
 /**
  * 
- * AssetManager for TGE
+ * AssetMananger for TGE
  * =====================
  * 
  * Important usage note!
@@ -184,7 +184,8 @@ class AssetManager {
             asset = test;                                                               // proceed to (attempt to) create the actor 
         }
         if (asset instanceof Actor) {      
-            const actor = asset.clone(true, o);                        
+            const actor = asset.clone(true, o);
+            if (actor.onSpawn) actor.onSpawn();                                         // call onSpawn()
             return actor;
         }        
     }

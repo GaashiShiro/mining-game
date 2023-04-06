@@ -14,9 +14,10 @@ const main = async () => {
     await assetManager.loadAsset({url: './assets/miner.asset.hjson'}, {constructors:{Miner}})
     const player = assetManager.spawn('miner-actor', {position:Engine.edges.center})
 
+
     console.log(player)
-
-
+    player.init()
+    
     Engine.start();
 }
 

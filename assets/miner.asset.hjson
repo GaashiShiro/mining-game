@@ -16,22 +16,193 @@
 
         flipbooks: [
             {
-                fps  : 8
+                fps  : 5
                 type : images
-                autoplay : walk
+                
                 sequences : [
+                    {
+                        name : climb
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: Climb####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : death
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: Death####.png
+                            start: 1
+                            end  : 1
+                        }
+                    }
+                    {
+                        name : drilldrill
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: DrillDrill####.png
+                            start: 1
+                            end  : 4
+                        }
+                    }
+                    {
+                        name : drillfall
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: DrillFall####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : drilljump
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: DrillJump####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : fall
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: Fall####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : idle
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: Idle####.png
+                            start: 1
+                            end  : 1
+                        }
+                    }
+                    {
+                        name : jump
+                        loop : false
+                        path : './gfx/miner/'
+                        urls : {
+                            name: Jump####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : pickfall
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: PickFall####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : pickidle
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: PickIdle####.png
+                            start: 1
+                            end  : 1
+                        }
+                    }
+                    {
+                        name : pickjump
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: PickJump####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : pickmine
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: PickMine####.png
+                            start: 1
+                            end  : 2
+                        }
+                    }
+                    {
+                        name : pickwalk
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: PickWalk####.png
+                            start: 1
+                            end  : 4
+                        }
+                    }
+                    {
+                        name : spadedig
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: SpadeDig####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : spadefall
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: SpadeFall####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : spadejump
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: SpadeJump####.png
+                            start: 1
+                            end  : 3
+                        }
+                    }
+                    {
+                        name : spadewalk
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : {
+                            name: SpadeWalk####.png
+                            start: 1
+                            end  : 4
+                        }
+                    }
                     {
                         name : walk
                         loop : true
                         path : './gfx/miner/'
-                        urls : [
-                            Walk0001.png
-                            Walk0002.png
-                            Walk0003.png
-                            Walk0004.png
-                        ]
+                        urls : {
+                            name: Walk####.png
+                            start: 1
+                            end  : 4
+                        }
                     }
+
                 ]
+                autoplay : idle
             }
         ]
    }
