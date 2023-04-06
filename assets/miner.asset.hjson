@@ -1,0 +1,38 @@
+{
+    type : 'actor'
+    version : '1.0'
+
+    data : {
+        class : 'Miner'
+
+        params : {
+            type   : 'player'
+            name   : 'miner-actor' 
+            zIndex : 3
+            origin : { x:-0.5, y:-0.5 }
+            lives  : 1
+            hp     : 100
+        }
+
+        flipbooks: [
+            {
+                fps  : 8
+                type : images
+                autoplay : walk
+                sequences : [
+                    {
+                        name : walk
+                        loop : true
+                        path : './gfx/miner/'
+                        urls : [
+                            Walk0001.png
+                            Walk0002.png
+                            Walk0003.png
+                            Walk0004.png
+                        ]
+                    }
+                ]
+            }
+        ]
+   }
+}

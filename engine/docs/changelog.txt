@@ -1,0 +1,187 @@
+Version 2.4.2
+
+-
+-
+-
+-
+-
+-
+-----------------------------------------------------------------
+Version 2.4.1
+- Engine: init/setup code in a way that 'late setup' is possible
+    * You can either run Engine.init(mainFunction, setup) or run the setup (late) in the main function
+    * Event handling improved
+- Events: Improvements and bug fixes
+- TGE-Agent: More complete server side file system access module
+- Added Tools/FileSystem-Agent module to unify file system access interface
+- UI-HTML
+    * Improved Confirmation dialog and UFileList components
+    * Upgraded event handling system to use Events module
+- CanvasSurface: improved .toImage() export function
+- Utils: added remove() function to filter out elements directly from given array (as opposed to returning a filtered array)
+- Networking: improved error handling, .req can now handle post requests
+- Tools/Collider-Editor almost completed
+
+-----------------------------------------------------------------
+Version 2.4
+- Removed MultiCast module from the project. All events (hardware and custom) work now via Engine.events and Events class
+- Controllers example was rewritten to better illustrate the possibilities of Gamepad and Virtual Joysticks (requires touch screen)
+- Improved Engine start up / init / setup sequence
+- Improved Tools/Collider-Editor (not complete yet!)
+- Improved several components to work with new event system, such as UI components, CanvasRenderer, Renderer, GameController
+- Added Networking module: helper functions for server/API access
+- TGE-Agent: The file system access works now via NodeJS server (TGE-Agent). 
+This is a workaround to get better file access rights for TGE Editors. TGE-Agent is not complete yet, missing save file etc.
+- Utils.getJSON() now assumes .hjson file extensions if none is supplied in the url parameter
+- Complete overhaul of MainMenu module
+
+-----------------------------------------------------------------
+Version 2.3.1
+- Fixed gameLoop timer issues and calling Engine.renderingSurface.resetTransform() without checking if renderingSurface exists
+- Fixed event handling in Engine
+- Added running time functions in the Engine
+
+-----------------------------------------------------------------
+Version 2.3
+Huge changes made for better support of platformer/tilemap based games, including asset management and level editors
+- Added AssetManager
+- Added tools/collider-editor
+- Improved event system
+- Improved flipbook
+- Improved world (added concept of Camera)
+- New module: renderer (needs more integration work)
+- Improved/overhauled/new modules: ui-html, actor, actorMovement, collider, customLayer, engine, enum, gameController, gameLoop, physics, player, tileMap, type
+
+-----------------------------------------------------------------
+Version 2.2
+- Reworked HTML UI system and UI components
+- Reworked engine module event handling (added events.js) currently the event system is still a bit of a mess 
+- Added tileMap and customLayer, which will be a replacement for World and Scene modules. World cannot be destoroyed yet because it has the code for the isometric renderer
+
+-----------------------------------------------------------------
+Version 2.1
+- Major upgrades and fixes in GameLoop, Actor and Collider classes to improve collisions, collision detection algorithms and timing issues
+- Added collisionOptimizer, although not complete yet, allows for much more granular control of collision detection in the future by using quadtrees
+- Added Experimental sub-folder for saving tests of upcoming/experimental features as part of the engine
+- Three.js and rasterizer.js allow mathematically accurate software rendering of basic meshes (incomplete, but somewhat usable)
+- Server-side sub-folder added, which contains files for upcoming server side TGE compiler/interpreter which allows saving permanent game state and possibly multiplayer games in the future
+- Improved/updated raytracer.js and added a new demo (raytracer)
+- Added Engine.setup function which takes several common setup parameters/flags at once
+-----------------------------------------------------------------
+Version 2.0.11
+- Relaxation of ParticleSystem.Emitter parameters. InitEmitter does not seal the params object any more
+- Fixed a bug which prevented images from being added into particles via "params.initParticle.img" parameter
+- Fixed bugs in Audio.js and added pause() method
+
+-----------------------------------------------------------------
+Version 2.0.10
+- Fixed async image loading problem in _initEmitter() by moving the image loading as last executed thing
+
+-----------------------------------------------------------------
+Version 2.0.9
+- Added Particle-Score demo
+- Improved particle system
+- Fixed bug in layers.js where renderingSurface transform was not reset before drawing the image
+
+-----------------------------------------------------------------
+Version 2.0.8
+- Fixed: Audio SFX now returns a promise
+
+-----------------------------------------------------------------
+Version 2.0.7
+
+- Fixed Types.Color color conversion process from CSS color values to native Type.Color 
+- Improved particles.js (breaking changes)
+- Particles no longer modify params object. Instead, it creates local copies of the params properties.
+- To further make particle systems more robust and avoid problems with typos in property names, emitter instances are no longer extendable. 
+- If you need to add custom properties to emitters, use emitter.data object which will be ignored by the particle engine.
+- Multiple ParticleSystem instances can now be created. The engine maintains of list of all instances (Engine.gameLoop.particleSystems array)
+- Fixed particle system gravity
+- Added particle system gravity example
+- Audio subsystem update
+- Audio demo added
+
+-----------------------------------------------------------------
+Version 2.0.6
+
+- Added particle system editor (devtools)
+- Improved audio.js documentation
+- Improved actor rendering
+- flags.js finalized (sort of)
+- Improved particles.js
+- Added gameLoop.step()
+- Added preventKeyDefaults flag and preventedKeys object into Engine class
+
+-----------------------------------------------------------------
+Version 2.0.5
+
+- Added basic shapes in particle engine: circle, square, ring, triangle, polygon, star
+- Added particle image and shape tinting, particle shape tint evolution
+- Added emitter.pivot (Vector2) to allow the spawn point to be moved at will
+- Added particle scale evolution
+- Added Actor.opacity. 1 = fully opaque (default), 0 = transparent
+- Added Gameloop.clearColor property (null i.e. disabled by default) 
+- Improved html-ui.js module functionality and added UWindow and UListbox components
+- Some improvements to DevTools and UI event handling pipeline (event delegation not working well with MultiCast)
+- Improvements and bug fixes in Types.Color class
+- Reworked actor creation in GameLoop.add()
+- Separated Actors from other Gameloop Objects (Layer, Level, Custom)
+- Slightly improved Actor rendering speed
+- Added mixin support (utils.js)
+- Added ImageOwner mixin into Actor and Layer classes
+- Separated Parallax and Layer into own different classes. Layer can now be used to represent lightweight, scrollable background image instead of an actor
+- Examples overhauled
+- Added actor-stress-test, actor-target, and particles2 examples
+
+-----------------------------------------------------------------
+Version 2.0.4
+
+- Improved documentation
+- Fixed bugs in Actor, Colliders, collision detection, Projectiles, GameLoop
+- Added/Improved Projectile Actor homing parameters and behavior
+- Added Actor.addCollider() convenience function
+- Added Enemy Actor
+- Automatic collision handling between Player, PlayerShot, Enemy, EnemyShot. Create the Actors, attach Colliders and go!
+- Added html-ui.js module with basic UI components
+- Added some UI components in DevTools
+- Improved MultiCast functionality and performance. Event delegate arrays are now created on-demand.
+- Implemented Engine.flags.mouseEnabled to allow disabling of Engine mouse events
+- Fixed missing implementation of PointerController.isActive 
+- Vastly improved particle engine
+- Rewritten examples/particles demo 
+
+-----------------------------------------------------------------
+Version 2.0.3
+
+Major changes:
+- Reworked debug.js to fully support 2.0
+- Added devtools.js and examples/debugging demo
+- Improved PointerController added support for 2 virtual joysticks
+- Improved ParticleSystem
+
+Minor changes:
+- Minor refactoring and improvements in Engine, GameLoop, Actor, and CanvasSurface
+- Fixed bugs in Types
+- Added docs/roadmap.txt
+- Improved documentation
+
+-----------------------------------------------------------------
+Version 2.0.2
+
+Major changes:
+- Refactoring of the particle engine. Breaking changes.
+
+-----------------------------------------------------------------
+Version 2.0.1
+
+Major changes:
+- Added examples/controllers
+
+Minor changes:
+- Changelog added
+- Fixed issues with Engine 'edges'
+- Minor updates and fixes in Actors and Projectiles demos
+
+-----------------------------------------------------------------
+Version 2.0.0
+- Series of initial 'alpha' releases done with the same version number
